@@ -6,7 +6,7 @@
         public string Counterparty { get; set; }
         public float Quantity { get; set; }
         public long CalcEstimate { get; set; }
-        public abstract decimal CalculatePV(float price);
+        public abstract double CalculatePV(float price);
         public abstract string GetKetForMarketData();
     }
 }

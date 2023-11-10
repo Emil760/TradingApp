@@ -9,12 +9,12 @@ namespace TradingApp.Models
         public DateTime ExpiryDate { get; set; }
         public FXOptionType OptionType { get; set; }
 
-        public override decimal CalculatePV(float price)
+        public override double CalculatePV(float price)
         {
             if (OptionType == FXOptionType.Call)
-                return (decimal)Quantity * (decimal)(price > Strike ? Strike : price);
+                return (double)Quantity * (price > Strike ? Strike : price);
             else if (OptionType == FXOptionType.Put)
-                return (decimal)Quantity * (decimal)(price > Strike ? price : Strike);
+                return (double)Quantity * (price > Strike ? price : Strike);
             else
                 return 0;
         }

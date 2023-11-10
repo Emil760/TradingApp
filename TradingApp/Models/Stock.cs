@@ -4,9 +4,9 @@
     {
         public string Ticker { get; set; }
 
-        public override decimal CalculatePV(float price)
+        public override double CalculatePV(float price)
         {
-            return (decimal)Quantity * (decimal)price;
+            return (double)Quantity * price;
         }
 
         public override string GetKetForMarketData()

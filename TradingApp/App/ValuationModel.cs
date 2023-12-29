@@ -34,17 +34,7 @@ namespace TradingApp.App
 
         public IEnumerable<ValuationResult> CalculateValuationResults(IEnumerable<Trade> trades)
         {
-            ValuationResult[] valuationResults = new ValuationResult[trades.Count()];
-            int i = 0;
-
-            foreach (var trade in trades)
-            {
-                var valuationResult = CalculateValuationResult(trade);
-                valuationResults[i] = valuationResult;
-                i++;
-            }
-
-            return valuationResults;
+            return trades.Select(CalculateValuationResult);
         }
     }
 }
